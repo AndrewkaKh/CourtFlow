@@ -1,0 +1,702 @@
+{
+ "_comment": "Корты клуба Tennis.ru по схеме кортов. id составной: номера падела и тенниса пересекаются. shape — координаты на карте (единицы viewBox). photos — пути к фото в frontend/img/courts/, пока пусто.",
+ "zones": {
+  "k1": "Корпус 1",
+  "k2": "Корпус 2",
+  "out": "Улица"
+ },
+ "hours": {
+  "open": 7,
+  "close": 23
+ },
+ "tariffs": {
+  "padel": {
+   "base": 3200,
+   "peak": 4800
+  },
+  "outdoor": {
+   "base": 2400,
+   "peak": 3400
+  },
+  "hard": {
+   "base": 3600,
+   "peak": 5200
+  },
+  "clay": {
+   "base": 4200,
+   "peak": 5800
+  }
+ },
+ "peak": {
+  "from_hour": 17,
+  "weekends": true
+ },
+ "courts": [
+  {
+   "id": "padel-2",
+   "type": "padel",
+   "number": 2,
+   "zone": "k1",
+   "surface": "padel",
+   "indoor": true,
+   "single": false,
+   "floor": null,
+   "shape": {
+    "x": 103,
+    "y": 224,
+    "w": 172,
+    "h": 84
+   },
+   "tariff": "padel",
+   "photos": []
+  },
+  {
+   "id": "padel-3",
+   "type": "padel",
+   "number": 3,
+   "zone": "k1",
+   "surface": "padel",
+   "indoor": true,
+   "single": false,
+   "floor": null,
+   "shape": {
+    "x": 103,
+    "y": 328,
+    "w": 172,
+    "h": 84
+   },
+   "tariff": "padel",
+   "photos": []
+  },
+  {
+   "id": "padel-4",
+   "type": "padel",
+   "number": 4,
+   "zone": "k1",
+   "surface": "padel",
+   "indoor": true,
+   "single": false,
+   "floor": null,
+   "shape": {
+    "x": 103,
+    "y": 433,
+    "w": 172,
+    "h": 84
+   },
+   "tariff": "padel",
+   "photos": []
+  },
+  {
+   "id": "padel-5",
+   "type": "padel",
+   "number": 5,
+   "zone": "k1",
+   "surface": "padel",
+   "indoor": true,
+   "single": false,
+   "floor": null,
+   "shape": {
+    "x": 103,
+    "y": 626,
+    "w": 172,
+    "h": 84
+   },
+   "tariff": "padel",
+   "photos": []
+  },
+  {
+   "id": "padel-6",
+   "type": "padel",
+   "number": 6,
+   "zone": "k1",
+   "surface": "padel",
+   "indoor": true,
+   "single": false,
+   "floor": null,
+   "shape": {
+    "x": 103,
+    "y": 731,
+    "w": 172,
+    "h": 84
+   },
+   "tariff": "padel",
+   "photos": []
+  },
+  {
+   "id": "padel-7",
+   "type": "padel",
+   "number": 7,
+   "zone": "k1",
+   "surface": "padel",
+   "indoor": true,
+   "single": false,
+   "floor": null,
+   "shape": {
+    "x": 103,
+    "y": 836,
+    "w": 172,
+    "h": 84
+   },
+   "tariff": "padel",
+   "photos": []
+  },
+  {
+   "id": "padel-9",
+   "type": "padel",
+   "number": 9,
+   "zone": "k1",
+   "surface": "padel",
+   "indoor": true,
+   "single": false,
+   "floor": null,
+   "shape": {
+    "x": 358,
+    "y": 224,
+    "w": 172,
+    "h": 84
+   },
+   "tariff": "padel",
+   "photos": []
+  },
+  {
+   "id": "padel-10",
+   "type": "padel",
+   "number": 10,
+   "zone": "k1",
+   "surface": "padel",
+   "indoor": true,
+   "single": false,
+   "floor": null,
+   "shape": {
+    "x": 567,
+    "y": 224,
+    "w": 172,
+    "h": 84
+   },
+   "tariff": "padel",
+   "photos": []
+  },
+  {
+   "id": "padel-11",
+   "type": "padel",
+   "number": 11,
+   "zone": "k1",
+   "surface": "padel",
+   "indoor": true,
+   "single": false,
+   "floor": null,
+   "shape": {
+    "x": 776,
+    "y": 224,
+    "w": 172,
+    "h": 84
+   },
+   "tariff": "padel",
+   "photos": []
+  },
+  {
+   "id": "padel-12",
+   "type": "padel",
+   "number": 12,
+   "zone": "k1",
+   "surface": "padel",
+   "indoor": true,
+   "single": false,
+   "floor": null,
+   "shape": {
+    "x": 358,
+    "y": 328,
+    "w": 172,
+    "h": 84
+   },
+   "tariff": "padel",
+   "photos": []
+  },
+  {
+   "id": "padel-13",
+   "type": "padel",
+   "number": 13,
+   "zone": "k1",
+   "surface": "padel",
+   "indoor": true,
+   "single": false,
+   "floor": null,
+   "shape": {
+    "x": 567,
+    "y": 328,
+    "w": 172,
+    "h": 84
+   },
+   "tariff": "padel",
+   "photos": []
+  },
+  {
+   "id": "padel-14",
+   "type": "padel",
+   "number": 14,
+   "zone": "k1",
+   "surface": "padel",
+   "indoor": true,
+   "single": false,
+   "floor": null,
+   "shape": {
+    "x": 776,
+    "y": 328,
+    "w": 172,
+    "h": 84
+   },
+   "tariff": "padel",
+   "photos": []
+  },
+  {
+   "id": "padel-15",
+   "type": "padel",
+   "number": 15,
+   "zone": "k1",
+   "surface": "padel",
+   "indoor": true,
+   "single": false,
+   "floor": null,
+   "shape": {
+    "x": 358,
+    "y": 433,
+    "w": 172,
+    "h": 84
+   },
+   "tariff": "padel",
+   "photos": []
+  },
+  {
+   "id": "padel-16",
+   "type": "padel",
+   "number": 16,
+   "zone": "k1",
+   "surface": "padel",
+   "indoor": true,
+   "single": false,
+   "floor": null,
+   "shape": {
+    "x": 567,
+    "y": 433,
+    "w": 172,
+    "h": 84
+   },
+   "tariff": "padel",
+   "photos": []
+  },
+  {
+   "id": "padel-17",
+   "type": "padel",
+   "number": 17,
+   "zone": "k1",
+   "surface": "padel",
+   "indoor": true,
+   "single": false,
+   "floor": null,
+   "shape": {
+    "x": 776,
+    "y": 433,
+    "w": 172,
+    "h": 84
+   },
+   "tariff": "padel",
+   "photos": []
+  },
+  {
+   "id": "padel-8",
+   "type": "padel",
+   "number": 8,
+   "zone": "k1",
+   "surface": "padel",
+   "indoor": true,
+   "single": true,
+   "floor": "2 этаж",
+   "shape": {
+    "x": 424,
+    "y": 956,
+    "w": 121,
+    "h": 56
+   },
+   "tariff": "padel",
+   "photos": []
+  },
+  {
+   "id": "padel-1",
+   "type": "padel",
+   "number": 1,
+   "zone": "k1",
+   "surface": "padel",
+   "indoor": true,
+   "single": false,
+   "floor": "1 этаж",
+   "shape": {
+    "x": 834,
+    "y": 944,
+    "w": 172,
+    "h": 84
+   },
+   "tariff": "padel",
+   "photos": []
+  },
+  {
+   "id": "tennis-14",
+   "type": "tennis",
+   "number": 14,
+   "zone": "k1",
+   "surface": "hard",
+   "indoor": true,
+   "single": false,
+   "floor": null,
+   "shape": {
+    "x": 342,
+    "y": 596,
+    "w": 107,
+    "h": 314
+   },
+   "tariff": "hard",
+   "photos": []
+  },
+  {
+   "id": "tennis-12",
+   "type": "tennis",
+   "number": 12,
+   "zone": "k1",
+   "surface": "hard",
+   "indoor": true,
+   "single": false,
+   "floor": null,
+   "shape": {
+    "x": 518,
+    "y": 596,
+    "w": 107,
+    "h": 314
+   },
+   "tariff": "hard",
+   "photos": []
+  },
+  {
+   "id": "tennis-11",
+   "type": "tennis",
+   "number": 11,
+   "zone": "k1",
+   "surface": "hard",
+   "indoor": true,
+   "single": false,
+   "floor": null,
+   "shape": {
+    "x": 694,
+    "y": 596,
+    "w": 107,
+    "h": 314
+   },
+   "tariff": "hard",
+   "photos": []
+  },
+  {
+   "id": "tennis-10",
+   "type": "tennis",
+   "number": 10,
+   "zone": "k1",
+   "surface": "hard",
+   "indoor": true,
+   "single": false,
+   "floor": null,
+   "shape": {
+    "x": 870,
+    "y": 596,
+    "w": 107,
+    "h": 314
+   },
+   "tariff": "hard",
+   "photos": []
+  },
+  {
+   "id": "tennis-17",
+   "type": "tennis",
+   "number": 17,
+   "zone": "k2",
+   "surface": "hard",
+   "indoor": true,
+   "single": false,
+   "floor": "2 этаж",
+   "shape": {
+    "x": 116,
+    "y": 1390,
+    "w": 106,
+    "h": 150
+   },
+   "tariff": "hard",
+   "photos": []
+  },
+  {
+   "id": "tennis-1",
+   "type": "tennis",
+   "number": 1,
+   "zone": "k2",
+   "surface": "clay",
+   "indoor": true,
+   "single": false,
+   "floor": null,
+   "shape": {
+    "x": 302,
+    "y": 1389,
+    "w": 107,
+    "h": 316
+   },
+   "tariff": "clay",
+   "photos": []
+  },
+  {
+   "id": "tennis-2",
+   "type": "tennis",
+   "number": 2,
+   "zone": "k2",
+   "surface": "clay",
+   "indoor": true,
+   "single": false,
+   "floor": null,
+   "shape": {
+    "x": 483,
+    "y": 1389,
+    "w": 107,
+    "h": 316
+   },
+   "tariff": "clay",
+   "photos": []
+  },
+  {
+   "id": "tennis-3",
+   "type": "tennis",
+   "number": 3,
+   "zone": "k2",
+   "surface": "clay",
+   "indoor": true,
+   "single": false,
+   "floor": null,
+   "shape": {
+    "x": 666,
+    "y": 1389,
+    "w": 107,
+    "h": 316
+   },
+   "tariff": "clay",
+   "photos": []
+  },
+  {
+   "id": "tennis-4",
+   "type": "tennis",
+   "number": 4,
+   "zone": "k2",
+   "surface": "clay",
+   "indoor": true,
+   "single": false,
+   "floor": null,
+   "shape": {
+    "x": 848,
+    "y": 1389,
+    "w": 107,
+    "h": 316
+   },
+   "tariff": "clay",
+   "photos": []
+  },
+  {
+   "id": "padel-28",
+   "type": "padel",
+   "number": 28,
+   "zone": "out",
+   "surface": "padel",
+   "indoor": false,
+   "single": false,
+   "floor": null,
+   "shape": {
+    "x": 95,
+    "y": 2080,
+    "w": 86,
+    "h": 174
+   },
+   "tariff": "outdoor",
+   "photos": []
+  },
+  {
+   "id": "padel-26",
+   "type": "padel",
+   "number": 26,
+   "zone": "out",
+   "surface": "padel",
+   "indoor": false,
+   "single": false,
+   "floor": null,
+   "shape": {
+    "x": 95,
+    "y": 2262,
+    "w": 172,
+    "h": 86
+   },
+   "tariff": "outdoor",
+   "photos": []
+  },
+  {
+   "id": "padel-27",
+   "type": "padel",
+   "number": 27,
+   "zone": "out",
+   "surface": "padel",
+   "indoor": false,
+   "single": false,
+   "floor": null,
+   "shape": {
+    "x": 276,
+    "y": 2262,
+    "w": 86,
+    "h": 172
+   },
+   "tariff": "outdoor",
+   "photos": []
+  },
+  {
+   "id": "padel-25",
+   "type": "padel",
+   "number": 25,
+   "zone": "out",
+   "surface": "padel",
+   "indoor": false,
+   "single": false,
+   "floor": null,
+   "shape": {
+    "x": 95,
+    "y": 2356,
+    "w": 86,
+    "h": 172
+   },
+   "tariff": "outdoor",
+   "photos": []
+  },
+  {
+   "id": "padel-24",
+   "type": "padel",
+   "number": 24,
+   "zone": "out",
+   "surface": "padel",
+   "indoor": false,
+   "single": false,
+   "floor": null,
+   "shape": {
+    "x": 189,
+    "y": 2442,
+    "w": 172,
+    "h": 86
+   },
+   "tariff": "outdoor",
+   "photos": []
+  },
+  {
+   "id": "padel-23",
+   "type": "padel",
+   "number": 23,
+   "zone": "out",
+   "surface": "padel",
+   "indoor": false,
+   "single": false,
+   "floor": null,
+   "shape": {
+    "x": 371,
+    "y": 2442,
+    "w": 172,
+    "h": 86
+   },
+   "tariff": "outdoor",
+   "photos": []
+  },
+  {
+   "id": "padel-22",
+   "type": "padel",
+   "number": 22,
+   "zone": "out",
+   "surface": "padel",
+   "indoor": false,
+   "single": false,
+   "floor": null,
+   "shape": {
+    "x": 553,
+    "y": 2442,
+    "w": 172,
+    "h": 86
+   },
+   "tariff": "outdoor",
+   "photos": []
+  },
+  {
+   "id": "padel-21",
+   "type": "padel",
+   "number": 21,
+   "zone": "out",
+   "surface": "padel",
+   "indoor": false,
+   "single": false,
+   "floor": null,
+   "shape": {
+    "x": 735,
+    "y": 2442,
+    "w": 172,
+    "h": 86
+   },
+   "tariff": "outdoor",
+   "photos": []
+  },
+  {
+   "id": "padel-18",
+   "type": "padel",
+   "number": 18,
+   "zone": "out",
+   "surface": "padel",
+   "indoor": false,
+   "single": false,
+   "floor": null,
+   "shape": {
+    "x": 735,
+    "y": 2262,
+    "w": 86,
+    "h": 172
+   },
+   "tariff": "outdoor",
+   "photos": []
+  },
+  {
+   "id": "padel-19",
+   "type": "padel",
+   "number": 19,
+   "zone": "out",
+   "surface": "padel",
+   "indoor": false,
+   "single": false,
+   "floor": null,
+   "shape": {
+    "x": 830,
+    "y": 2262,
+    "w": 172,
+    "h": 86
+   },
+   "tariff": "outdoor",
+   "photos": []
+  },
+  {
+   "id": "padel-20",
+   "type": "padel",
+   "number": 20,
+   "zone": "out",
+   "surface": "padel",
+   "indoor": false,
+   "single": false,
+   "floor": null,
+   "shape": {
+    "x": 917,
+    "y": 2356,
+    "w": 86,
+    "h": 172
+   },
+   "tariff": "outdoor",
+   "photos": []
+  }
+ ]
+}
