@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Бронирование кортов Tennis.ru</title>
+<meta name="description" content="Выберите корт на карте клуба и забронируйте время онлайн.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Golos+Text:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div class="brand">
+      <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="12.5" fill="#DDF23C" stroke="#13213A" stroke-width="1.5"/><path d="M5.2 6.6c4.6 3.6 4.6 11.2 0 14.8M22.8 6.6c-4.6 3.6-4.6 11.2 0 14.8" fill="none" stroke="#13213A" stroke-width="1.5"/></svg>
+      <span class="wm">CourtFlow</span>
+      <span class="sub">бронирование кортов клуба Tennis.ru</span>
+    </div>
+    <span class="demo" id="modeBadge" hidden></span>
+  </header>
+
+  <div class="filters">
+    <div class="seg" id="seg" role="group" aria-label="Вид спорта">
+      <button data-type="all" aria-pressed="true">Все</button>
+      <button data-type="padel" aria-pressed="false">Падел</button>
+      <button data-type="tennis" aria-pressed="false">Теннис</button>
+    </div>
+    <div class="dayrow" id="days" role="group" aria-label="День"></div>
+    <label class="time" id="timeWrap"><span>Свободно в</span>
+      <select id="hour" aria-label="Время начала"></select>
+    </label>
+    <p class="count" id="count" aria-live="polite"></p>
+  </div>
+
+  <div class="main">
+    <section class="stage" id="stage" aria-label="Карта кортов клуба">
+      <div class="plane" id="plane"><svg id="map" class="map" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet"></svg></div>
+      <p class="status" id="mapStatus">Загружаем карту клуба</p>
+      <div class="zones" id="zones" role="group" aria-label="Зона клуба"></div>
+      <div class="tools">
+        <button id="zin" aria-label="Приблизить">+</button>
+        <button id="zout" aria-label="Отдалить">−</button>
+        <button id="t3d" class="t3d" aria-label="Показать план сверху">2D</button>
+      </div>
+      <div class="legend">
+        <span><i style="background:var(--padel)"></i>Падел</span>
+        <span><i style="background:var(--hard)"></i>Хард</span>
+        <span><i style="background:var(--clay)"></i>Грунт</span>
+        <span class="lfree" id="lfree" hidden><i></i>Свободен в выбранное время</span>
+      </div>
+      <div class="tip" id="tip" hidden></div>
+    </section>
+    <aside class="panel collapsed" id="panel" aria-label="Бронирование" aria-live="polite"></aside>
+  </div>
+</div>
+<script type="module" src="/js/app.js"></script>
+</body>
+</html>
