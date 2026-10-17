@@ -23,6 +23,27 @@ python run.py
 
 Тесты: `python -m pytest`.
 
+## Запуск на macOS
+
+Нужен Python 3.10 или новее (`brew install python`, системный 3.9 не подойдёт).
+
+```bash
+./start.sh
+```
+
+Вручную то же самое:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements-dev.txt
+cp .env.example .env
+python run.py
+```
+
+Для разработки удобнее запуск с автоперезагрузкой при изменении кода:
+`python -m uvicorn backend.main:create_app --factory --reload`.
+
 ## Как проверить руками
 
 1. Выберите день и время в поле «Свободно в»: занятые корты погаснут.
@@ -75,7 +96,8 @@ frontend/           статический фронт без сборки
   privacy.html, offer.html   черновики юридических текстов
 tests/test_api.py   сценарий брони, двойная бронь, истечение удержания, валидация
 run.py              запуск сервера
-start.bat           установка и запуск в один клик
+start.bat           установка и запуск в один клик (Windows)
+start.sh            то же для macOS и Linux
 ```
 
 ## Что дальше
