@@ -37,6 +37,7 @@ class Settings:
     yookassa_shop_id: str
     yookassa_secret_key: str
     metrika_id: str
+    admin_password: str  # пусто — админка выключена
 
 
 def load_settings(**overrides) -> Settings:
@@ -61,6 +62,7 @@ def load_settings(**overrides) -> Settings:
         yookassa_shop_id=shop_id,
         yookassa_secret_key=secret,
         metrika_id=env("METRIKA_ID", ""),
+        admin_password=env("ADMIN_PASSWORD", ""),
     )
     values.update(overrides)
     return Settings(**values)

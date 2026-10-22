@@ -1,5 +1,5 @@
 // Данные с сервера и вычисления поверх них: статус слота, цена, ближайшие свободные.
-import { isWeekend } from './format.js';
+import { hourRanges, isWeekend, rub } from './format.js';
 
 export const ZONE_NAMES = { k1: 'Корпус 1', k2: 'Корпус 2', out: 'Улица' };
 
@@ -32,8 +32,26 @@ export function createStore(catalog) {
     tariff(c) { return catalog.tariffs[c.tariff]; },
     price(c, dayIdx, hour) {
       const t = store.tariff(c), p = catalog.peak;
-      const peak = hour >= p.from_hour || (p.weekends && isWeekend(avail.dates[dayIdx]));
-      return peak ? t.peak : t.base;
+      const peakHours = isWeekend(avail.dates[dayIdx]) ? p.weekends : p.weekdays;
+      return peakHours.includes(hour) ? t.peak : t.base;
+    },
+    /** «В пиковые часы 4 800 ₽: в будни 17:00–23:00, в выходные весь день». Пусто, если пика нет. */
+    peakNote(c) {
+      const t = store.tariff(c), { weekdays, weekends } = catalog.peak;
+      if (t.peak === t.base || (!weekdays.length && !weekends.length)) return '';
+      const part = (hrs) => (hrs.length === hours.length ? 'весь день' : hourRanges(hrs));
+      const when = weekdays.join() === weekends.join() ? `ежедневно ${part(weekdays)}`
+        : [weekdays.length && `в будни ${part(weekdays)}`, weekends.length && `в выходные ${part(weekends)}`]
+          .filter(Boolean).join(', ');
+      return `В пиковые часы ${rub(t.peak)}: ${when}`;
+    },
+    /** Самая низкая цена часа, которая реально действует. */
+    minPrice(c) {
+      const t = store.tariff(c), { weekdays, weekends } = catalog.peak;
+      const used = [];
+      if (weekdays.length < hours.length || weekends.length < hours.length) used.push(t.base);
+      if (weekdays.length || weekends.length) used.push(t.peak);
+      return Math.min(...used);
     },
 
     nextFree(c, fromDay, limit, fromHour = null) {

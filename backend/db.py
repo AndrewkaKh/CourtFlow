@@ -37,6 +37,13 @@ CREATE INDEX IF NOT EXISTS bookings_by_payment ON bookings (payment_id);
 CREATE TABLE IF NOT EXISTS seeded_dates (
     date TEXT PRIMARY KEY
 );
+
+-- Цены, которые менеджер задал в админке, поверх data/courts.json. Одна строка.
+CREATE TABLE IF NOT EXISTS pricing (
+    id          INTEGER PRIMARY KEY CHECK (id = 1),
+    data        TEXT NOT NULL,          -- JSON {"tariffs": {...}, "peak": {"weekdays": [...], "weekends": [...]}}
+    updated_at  TEXT NOT NULL           -- ISO UTC
+);
 """
 
 

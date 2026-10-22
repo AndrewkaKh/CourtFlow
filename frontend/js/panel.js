@@ -92,7 +92,6 @@ export function renderPanel(S, store, { visible, config }) {
   }
 
   // шаг pick: карточка корта и расписание
-  const t = store.tariff(c);
   const near = store.nextFree(c, 0, 3);
   const slots = store.hours.map((h) => {
     const s = store.status(c.id, S.day, h);
@@ -101,7 +100,7 @@ export function renderPanel(S, store, { visible, config }) {
   return `${head}${errorBox(S.error)}
     <div class="block"><div class="photos">${photos(c, store)}</div>
     ${c.photos && c.photos.length ? '' : '<p class="note">Иллюстрации-заглушки. Фото корта добавляются в data/courts.json.</p>'}</div>
-    <div class="price"><b>от ${rub(t.base)} за час</b><span>После 17:00 и в выходные ${rub(t.peak)}</span></div>
+    <div class="price"><b>от ${rub(store.minPrice(c))} за час</b>${store.peakNote(c) ? `<span>${store.peakNote(c)}</span>` : ''}</div>
     <div class="block"><h3>Ближайшие свободные</h3><div class="near">${near.length ? near.map(([d, h]) => `<button data-act="near" data-day="${d}" data-hour="${h}">${dayShort(store.dates[d], d)}, ${hh(h)}</button>`).join('') : '<span class="muted">На неделю вперёд всё занято</span>'}</div></div>
     <div class="block"><h3>Расписание на ${dayLong(store.dates[S.day], S.day)}</h3>
       <div class="dayrow">${store.dates.map((iso, d) => `<button class="day" data-act="day" data-day="${d}" aria-pressed="${d === S.day}">${dayShort(iso, d)}</button>`).join('')}</div>

@@ -9,6 +9,18 @@ export const hh = (h) => String(h).padStart(2, '0') + ':00';
 export const rub = (n) => n.toLocaleString('ru-RU') + ' ₽';
 export const isWeekend = (iso) => { const g = parseIso(iso).getDay(); return g === 0 || g === 6; };
 
+/** Часы начала слотов [17, 18, 19, 21] → «17:00–20:00, 21:00–22:00». */
+export function hourRanges(hours) {
+  const s = [...hours].sort((a, b) => a - b), out = [];
+  for (let i = 0; i < s.length; i++) {
+    let j = i;
+    while (j + 1 < s.length && s[j + 1] === s[j] + 1) j++;
+    out.push(`${hh(s[i])}–${hh(s[j] + 1)}`);
+    i = j;
+  }
+  return out.join(', ');
+}
+
 export function dayShort(iso, index) {
   if (index === 0) return 'Сегодня';
   if (index === 1) return 'Завтра';

@@ -73,7 +73,7 @@ function tipHtml(c) {
     const free = store.status(c.id, S.day, S.hour) === 'free';
     st = `<span class="st ${free ? 'free' : ''}">${free ? 'Свободен' : 'Занят'} в ${hh(S.hour)}</span>`;
   }
-  return `<b>${store.name(c)}</b>${store.meta(c).slice(0, 2).join(', ')}<br>от ${rub(store.tariff(c).base)} за час${st}`;
+  return `<b>${store.name(c)}</b>${store.meta(c).slice(0, 2).join(', ')}<br>от ${rub(store.minPrice(c))} за час${st}`;
 }
 
 // ---------- данные ----------
