@@ -29,3 +29,12 @@ export const api = {
   mockPay: (id) => request(`/api/bookings/${encodeURIComponent(id)}/mock-pay`, { method: 'POST' }),
   cancel: (id) => request(`/api/bookings/${encodeURIComponent(id)}/cancel`, { method: 'POST' }),
 };
+
+export const adminApi = {
+  session: () => request('/api/admin/session'),
+  login: (password) => request('/api/admin/login', { method: 'POST', body: JSON.stringify({ password }) }),
+  logout: () => request('/api/admin/logout', { method: 'POST' }),
+  pricing: () => request('/api/admin/pricing'),
+  savePricing: (body) => request('/api/admin/pricing', { method: 'PUT', body: JSON.stringify(body) }),
+  resetPricing: () => request('/api/admin/pricing', { method: 'DELETE' }),
+};

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Цены на корты · CourtFlow</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Ccircle cx='14' cy='14' r='12.5' fill='%23DDF23C' stroke='%2313213A' stroke-width='1.5'/%3E%3Cpath d='M5.2 6.6c4.6 3.6 4.6 11.2 0 14.8M22.8 6.6c-4.6 3.6-4.6 11.2 0 14.8' fill='none' stroke='%2313213A' stroke-width='1.5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Golos+Text:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="admin-body">
+<header class="abar">
+  <div class="brand">
+    <svg width="26" height="26" viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="12.5" fill="#DDF23C" stroke="#13213A" stroke-width="1.5"/><path d="M5.2 6.6c4.6 3.6 4.6 11.2 0 14.8M22.8 6.6c-4.6 3.6-4.6 11.2 0 14.8" fill="none" stroke="#13213A" stroke-width="1.5"/></svg>
+    <span class="wm">CourtFlow</span>
+    <span class="chip">Админка</span>
+  </div>
+  <nav class="abar-links">
+    <a href="/" target="_blank" rel="noopener">Открыть сайт</a>
+    <button class="linkbtn" id="logout" type="button" hidden>Выйти</button>
+  </nav>
+</header>
+
+<main class="admin">
+  <p class="loading" id="loading">Загрузка…</p>
+  <div class="notice" id="disabled" role="alert" hidden></div>
+
+  <section class="login" id="login" hidden>
+    <form class="login-card form" id="loginForm" novalidate>
+      <h1>Вход для менеджера</h1>
+      <p class="hint" id="loginHint">Пароль выдаёт администратор сайта.</p>
+      <input type="text" name="username" value="manager" autocomplete="username" hidden>
+      <div class="field"><label for="password">Пароль</label><input id="password" type="password" autocomplete="current-password" required></div>
+      <p class="error" id="loginError" role="alert" hidden></p>
+      <button class="btn" type="submit">Войти</button>
+    </form>
+  </section>
+
+  <form class="pricing" id="pricingForm" hidden novalidate>
+    <div class="a-head">
+      <h1>Цены на аренду</h1>
+      <p class="hint">За корт в час, в рублях. Клиенты видят новые цены сразу после сохранения. Цена уже созданных броней не меняется.</p>
+    </div>
+
+    <section class="tariffs" id="tariffs" aria-label="Тарифы"></section>
+
+    <section class="peakcard" aria-labelledby="peakTitle">
+      <div>
+        <h2 id="peakTitle">Пиковые часы</h2>
+        <p class="hint">Отметьте часы, когда действует пиковая цена. Будни и выходные настраиваются отдельно. Нажмите на час или проведите по шкале, чтобы отметить несколько часов сразу.</p>
+      </div>
+      <div class="dayline" id="dayline"></div>
+      <div class="dl-legend" aria-hidden="true"><span><i></i>Обычная цена</span><span><i class="pk"></i>Пиковая цена</span><span class="dl-tip">Клетка — час начала брони, например 17 — это 17:00–18:00</span></div>
+    </section>
+
+    <div class="defaults-row">
+      <span class="hint" id="updated"></span>
+      <button class="linkbtn" type="button" id="reset">Вернуть цены по умолчанию</button>
+    </div>
+
+    <div class="savebar" id="savebar">
+      <span id="saveState" aria-live="polite"></span>
+      <button class="btn ghost" type="button" id="discard">Отменить</button>
+      <button class="btn" type="submit" id="save">Сохранить</button>
+    </div>
+  </form>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script type="module" src="/js/admin.js"></script>
+</body>
+</html>
